@@ -19,3 +19,7 @@ def home(request):
 def room(request, pk):
     room = Room.objects.get(id=pk)
     return render(request, "base/room.html", {"path": pk, 'room': room})
+
+def createRoom(request):
+    context = {}
+    return render(request, 'base/room_form.html', context)
